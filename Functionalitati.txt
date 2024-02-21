@@ -1,0 +1,89 @@
+Această bază de date este compusă din următoarele tabele: client, employee, employeeAddress, transaction, service.
+
+
+Structura Tabelului client:
+
+- clientId
+- firstName
+- lastName
+- email
+- phone
+- transactions
+
+
+Structura Tabelului employee:
+
+- employeeId
+- firstName
+- lastName
+- salary
+- employeeAddress
+- transactions
+
+Structura Tabelului employeeAddress:
+
+- employeeAddressId
+- streetAddress
+- city
+- state
+
+
+Structura Tabelului service:
+
+- serviceId
+- serviceName
+- description
+- price
+
+
+Structura Tabelului transaction:
+
+- transactionId
+- clientId
+- serviceId
+- employeeId
+- transactionDate
+- price
+
+
+Relațiile între Tabele:
+
+Un client poate efectua multiple tranzacții.
+Un angajat poate fi asociat cu mai multe tranzacții.
+Fiecare angajat are o adresă unică.
+O tranzacție implică un singur tip de serviciu.
+
+
+Funcționalități pentru Client:
+
+- Crearea unui cont de client.
+- Autentificarea în cont.
+- Deconectarea din cont.
+- Realizarea unei tranzacții, care include selecția unui tip de serviciu (ex: Basic Wash, Deluxe Wash, Premium Wash), alegerea unui angajat în funcție de disponibilitatea acestuia, și stabilirea datei și orei tranzacției.
+- Accesarea profilului propriu pentru vizualizarea și editarea datelor personale (nume, prenume, telefon, parolă).
+- Vizualizarea Istoricului Tranzacțiilor: Permite clientului să acceseze istoricul complet al tranzacțiilor efectuate, oferindu-i o perspectivă asupra serviciilor utilizate anterior.
+- Vizualizarea Rezervărilor Viitoare: Oferă clientului posibilitatea de a vizualiza toate rezervările programate pentru viitor, inclusiv detaliile serviciilor selectate și informațiile legate de angajatul atribuit fiecărei rezervări.
+- Anularea Rezervărilor Viitoare: Permite clientului să anuleze oricare dintre rezervările viitoare, oferind flexibilitate și control asupra planificării serviciilor.
+
+
+Funcționalități Specifice pentru Administrare:
+
+- Vizualizarea tuturor conturilor create de clienți.
+- Vizualizarea informațiilor despre angajați și adresele lor.
+- Vizualizarea tuturor tipurilor de servicii oferite.
+- Vizualizarea tuturor tranzacțiilor efectuate în cadrul firmei.
+- Posibilitatea de a efectua operații CRUD (Create, Read, Update, Delete) pe fiecare tabelă din baza de date.
+- Vizualizarea Tranzacțiilor Încasate
+- Vizualizarea Tranzacțiilor Viitoare
+- Vizualizarea profitului obținut din tranzacțiile finalizate.
+
+Validări:
+
+- Validare pentru Formatul Emailului: Se asigură că adresa de email introdusă respectă un format valid.
+- Validare la Autentificare: Verifică dacă toate câmpurile sunt completate corespunzător și dacă contul există.
+- Validare la Crearea Tranzacțiilor: Asigură că data și ora selectate pentru o tranzacție nu sunt setate în trecut, garantând astfel că toate tranzacțiile sunt programate pentru viitor.
+
+
+Funcționalitate Suplimentară:
+
+- Implementarea unui filtru pentru lista de tranzacții, atât pentru clienți, cât și pentru administratori.
